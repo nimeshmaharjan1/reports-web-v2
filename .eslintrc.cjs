@@ -14,5 +14,7 @@ module.exports = {
       "warn",
       { allowConstantExport: true },
     ],
+    "no-unused-vars": "off", // Disable the base rule as it can report incorrect errors for TypeScript code
+    "@typescript-eslint/no-unused-vars": ["warn"], // Enable the TypeScript-specific rule
   },
 };

@@ -45,3 +45,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Scrollbar */
+*::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: #c2fae6;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #00ad6f;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #00ad6f;
+}
