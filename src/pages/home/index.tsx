@@ -14,7 +14,7 @@ import { Badge } from "@/components/ui/badge";
 
 const HomePage = () => {
   return (
-    <section className="container">
+    <section className="container pt-4">
       <div className="relative ml-auto flex-1 md:grow-0">
         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
         <Input
