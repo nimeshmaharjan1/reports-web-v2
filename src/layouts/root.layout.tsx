@@ -5,28 +5,40 @@ import { NAV_FILTER } from "@/lib/constants/root.constants";
 import { cn } from "@/lib/utils";
 import type { LabelProps } from "@radix-ui/react-label";
 import { Printer } from "lucide-react";
-import React, { type FC, type ReactNode } from "react";
-import { Link, Outlet, useNavigate, useSearchParams } from "react-router-dom";
+import { type FC } from "react";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 
 const RootLayout = () => {
+  const location = useLocation();
+  console.log(location);
   return (
-    <main className="h-screen w-full overflow-hidden">
+    <div className="h-screen w-full overflow-hidden">
       <header className="border-b">
         <nav className="container py-3 flex justify-between gap-3 items-center">
           <LogoSection></LogoSection>
-          <section className="hidden lg:block">
-            <FilterNav></FilterNav>
-          </section>
-          <CreateButton></CreateButton>
+          {location.pathname !== "/create" && (
+            <>
+              <section className="hidden lg:block">
+                <FilterNav></FilterNav>
+              </section>
+              <CreateButton></CreateButton>
+            </>
+          )}
         </nav>
       </header>
       <section className="flex container lg:hidden mt-2">
         <FilterNav></FilterNav>
       </section>
-      <main>
+      <main className="overflow-hidden">
         <Outlet></Outlet>
       </main>
-    </main>
+    </div>
   );
 };
 
