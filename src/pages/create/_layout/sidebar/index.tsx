@@ -6,7 +6,7 @@ import SidebarItems from "./sidebar-items";
 
 const CreateSidebar = ({ list }: { list: Item[] }) => {
   return (
-    <aside className="bg-accent">
+    <aside className="bg-accent hidden lg:block">
       <nav className="w-[300px] h-fit">
         <div className="flex-col bg-accent rounded ">
           <div className="search-section p-3">
