@@ -54,7 +54,7 @@ const ReportPreferences = ({ viewOnly = false }: { viewOnly?: boolean }) => {
         <RadioGroup
           onValueChange={(v) => handleRadioChange(v)}
           defaultValue="asap"
-          className="flex gap-3"
+          className="md:flex gap-3"
         >
           <div className="flex items-center space-x-2">
             <RadioGroupItem value="asap" id="r1" />

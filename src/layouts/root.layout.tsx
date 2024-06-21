@@ -16,9 +16,8 @@ import {
 
 const RootLayout = () => {
   const location = useLocation();
-  console.log(location);
   return (
-    <div className="h-screen w-full overflow-hidden">
+    <div className="h-screen w-full overflow-hidden z-30">
       <header className="border-b">
         <nav className="container py-3 flex justify-between gap-3 items-center">
           <LogoSection></LogoSection>
@@ -32,9 +31,11 @@ const RootLayout = () => {
           )}
         </nav>
       </header>
-      <section className="flex container lg:hidden mt-2">
-        <FilterNav></FilterNav>
-      </section>
+      {location.pathname !== "/create" && (
+        <section className="flex container lg:hidden mt-2">
+          <FilterNav></FilterNav>
+        </section>
+      )}
       <main className="overflow-hidden">
         <Outlet></Outlet>
       </main>

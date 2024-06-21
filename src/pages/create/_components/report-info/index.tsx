@@ -29,6 +29,7 @@ const ReportInfo = ({ items }: { items: Item[] }) => {
   };
   const getDateRangeFilters = (): { key: string; value: string }[] => {
     const report = items[selectedReport];
+    console.log({ report });
     if (report) {
       const dateRangeFilter = report.filters.find(
         (filter) => filter.type === "date_range"
@@ -83,7 +84,7 @@ const ReportInfo = ({ items }: { items: Item[] }) => {
           case "date_range":
             return (
               <div className="col-span-6 lg:col-span-3 space-y-2">
-                <Label>Select Date Range *</Label>
+                <Label>Select Date Range</Label>
                 <Select
                   defaultValue={dateRangeValues?.[0]?.value}
                   onValueChange={(v) => {
@@ -110,16 +111,18 @@ const ReportInfo = ({ items }: { items: Item[] }) => {
                   <div className="flex flex-col md:flex-row gap-4 !mt-6">
                     <div className="flex flex-col gap-2 md:w-1/2">
                       <Label>Start Date</Label>
+                      {/* TODO change this later */}
                       <Input
-                        type="date"
-                        max={new Date().toISOString().split("T")[0]}
+                        type="month"
+                        // max={new Date().toISOString().split("T")[0]}
+                        max={new Date().toISOString().split("T")[0].slice(0, 7)}
                       />
                     </div>
                     <div className="flex flex-col gap-2 md:w-1/2">
                       <Label>End Date</Label>
                       <Input
                         type="date"
-                        max={new Date().toISOString().split("T")[0]}
+                        // max={new Date().toISOString().split("T")[0]}
                       />
                     </div>
                   </div>

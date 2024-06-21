@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="23 17 27 84">
+	<g filter="url(#filter0_d_155_25075)">
+		<path d="M50 59C50 66.732 43.9558 73 36.5 73C29.0442 73 23 66.732 23 59C23 51.268 29.0442 45 36.5 45C43.9558 45 50 51.268 50 59Z" fill="#04A46D" />
+		<path d="M23 58L50 57C50 57 48.2062 49.3365 39.8 41.0345C31.7087 33.0434 23 17 23 17V58Z" fill="#04A46D" />
+		<path d="M23 60L50 61C50 61 48.2062 68.6635 39.8 76.9655C31.7087 84.9566 23 101 23 101V60Z" fill="#04A46D" />
+	</g>
+	<path d="M41.3741 60.392C41.7614 60.1052 42 59.5745 42 59C42 58.4255 41.7614 57.8948 41.3741 57.608L31.3047 50.151C30.7245 49.7214 30 50.2596 30 51.1202C30 51.5226 30.1682 51.894 30.4404 52.0928L36.5606 56.5616C38.0328 57.6366 38.0328 60.3634 36.5606 61.4384L30.4404 65.9072C30.1682 66.106 30 66.4774 30 66.8798C30 67.7404 30.7245 68.2786 31.3047 67.849L41.3741 60.392Z" fill="white" />
+	<defs>
+		<filter id="filter0_d_155_25075" x="0" y="0" width="73" height="130" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix" />
+			<feOffset dy="6" />
+			<feGaussianBlur stdDeviation="11.5" />
+			<feComposite in2="hardAlpha" operator="out" />
+			<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.678431 0 0 0 0 0.435294 0 0 0 0.38 0" />
+			<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_155_25075" />
+			<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_155_25075" result="shape" />
+		</filter>
+	</defs>
+	<style>
+		@keyframes glow {
+		0% {
+		filter: drop-shadow(0 0 5px #04A46D);
+		}
+		50% {
+		filter: drop-shadow(0 0 20px #04A46D);
+		}
+		100% {
+		filter: drop-shadow(0 0 5px #04A46D);
+		}
+		}
+		
+		/* Apply the animation to the
+		<g>
+			element */
+			g {
+			animation: glow 2s infinite;
+			}
+		</g>
+	</style>
+</svg>

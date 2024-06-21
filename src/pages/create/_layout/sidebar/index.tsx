@@ -3,10 +3,21 @@ import { Separator } from "@/components/ui/separator";
 import type { Item } from "@/lib/types/global.types";
 import { Search } from "lucide-react";
 import SidebarItems from "./sidebar-items";
+import { cn } from "@/lib/utils";
+import { useState } from "react";
+import { useGlobalStore } from "@/store/global.store";
 
 const CreateSidebar = ({ list }: { list: Item[] }) => {
+  const { closeSidebar, setShowSidebar, showSidebar, toggleSidebar } =
+    useGlobalStore();
+
   return (
-    <aside className="bg-accent hidden lg:block">
+    <aside
+      className={cn(
+        "bg-accent sm:block",
+        showSidebar ? "fixed left-0 top-16 h-auto w-80 z-30" : "hidden"
+      )}
+    >
       <nav className="w-[300px] h-fit">
         <div className="flex-col bg-accent rounded ">
           <div className="search-section p-3">

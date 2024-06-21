@@ -71,16 +71,15 @@ const Filters = ({
     });
   };
   return (
-    <div className="p-6 bg-accent rounded-lg space-y-8 md:space-y-4">
+    <div className="p-6 bg-accent rounded-lg space-y-6 md:space-y-4">
       {conditions.map(({ fieldId, operator, value }, idx) => {
         const field = fields.find((el) => el.key === fieldId);
         const fieldType = field?.type as PossibleKeys;
         const operators = fieldType ? Operator[fieldType] : [];
         const selectedOperator = operators.find((el) => el.key === operator);
-        console.log({ selectedOperator });
         return (
           <section key={idx} className="grid grid-cols-12 gap-3">
-            <div className="col-span-1">
+            <div className="col-span-12 lg:col-span-1">
               {idx === 0 ? (
                 <Input disabled placeholder="Where"></Input>
               ) : idx === 1 ? (
@@ -108,7 +107,7 @@ const Filters = ({
               )}
             </div>
             {/* Select for fields */}
-            <div className="col-span-2">
+            <div className="col-span-12 lg:col-span-2">
               <Select
                 onValueChange={(v) => {
                   const key = fields.find((range) => range.value === v)?.key;
@@ -129,7 +128,7 @@ const Filters = ({
                 </SelectContent>
               </Select>
             </div>
-            <div className="col-span-2">
+            <div className="col-span-12 lg:col-span-2">
               <Select
                 onValueChange={(v) => {
                   const key = operators.find((range) => range.value === v)?.key;
@@ -152,7 +151,7 @@ const Filters = ({
                 </SelectContent>
               </Select>
             </div>
-            <div className="col-span-6">
+            <div className="col-span-12 lg:col-span-6">
               {selectedOperator &&
               selectedOperator.value !== "Is Empty" &&
               selectedOperator.value !== "Is Not Empty" ? (
@@ -164,7 +163,7 @@ const Filters = ({
                 />
               ) : null}
             </div>
-            <div className="col-span-1">
+            <div className="col-span-12 lg:col-span-1">
               {idx > 0 && (
                 <Button size={"icon-sm"} variant={"destructive-outline"}>
                   <Trash

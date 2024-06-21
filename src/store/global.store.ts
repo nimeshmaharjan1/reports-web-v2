@@ -5,6 +5,10 @@ interface GlobalStoreState {
   selected: number;
   setSelected: (index: number) => void;
   //   increase: (by: number) => void;
+  showSidebar: boolean;
+  setShowSidebar: (v: boolean) => void;
+  toggleSidebar: () => void;
+  closeSidebar: () => void;
 }
 
 const useGlobalStore = create<GlobalStoreState>()(
@@ -16,6 +20,19 @@ const useGlobalStore = create<GlobalStoreState>()(
         setSelected: (index) =>
           set(() => ({
             selected: index,
+          })),
+        showSidebar: false,
+        setShowSidebar: (v) =>
+          set(() => ({
+            showSidebar: v,
+          })),
+        toggleSidebar: () =>
+          set((state) => ({
+            showSidebar: !state.showSidebar,
+          })),
+        closeSidebar: () =>
+          set(() => ({
+            showSidebar: false,
           })),
       }),
       { name: "global-store" }
